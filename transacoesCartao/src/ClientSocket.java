@@ -8,8 +8,7 @@ public class ClientSocket {
         DataInputStream entrada = new DataInputStream(conexao.getInputStream());
         DataOutputStream saida = new DataOutputStream(conexao.getOutputStream());
 
-
-
+        
         System.out.println("Conexao encerrada!");
         conexao.close();
     }
