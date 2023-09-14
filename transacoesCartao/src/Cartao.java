@@ -4,12 +4,12 @@ public class Cartao {
 
     private String numero;
     private String nomeCliente;
-    private Double saldo;
+    private String saldo;
 
     public Cartao() {
     }
 
-    public Cartao(String numero, String nomeCliente, Double saldo) {
+    public Cartao(String numero, String nomeCliente, String saldo) {
         this.numero = numero;
         this.nomeCliente = nomeCliente;
         this.saldo = saldo;
@@ -31,11 +31,11 @@ public class Cartao {
         this.nomeCliente = nomeCliente;
     }
 
-    public Double getSaldo() {
+    public String getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(Double saldo) {
+    public void setSaldo(String saldo) {
         this.saldo = saldo;
     }
 
