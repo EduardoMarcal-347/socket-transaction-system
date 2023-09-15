@@ -1,5 +1,6 @@
 import java.io.*;
 import java.net.Socket;
+import java.util.Arrays;
 
 public class ClientSocket {
 
@@ -19,6 +20,8 @@ public class ClientSocket {
 
         DataInputStream entrada = new DataInputStream(conexao.getInputStream());
         DataOutputStream saida = new DataOutputStream(conexao.getOutputStream());
+        saida.write(m_msgBytes_0200);
+        saida.flush();
 
         System.out.println("Conexao encerrada!");
         conexao.close();
