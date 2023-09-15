@@ -1,4 +1,5 @@
-import java.util.Date;
+package entities;
+
 import java.util.Objects;
 
 public class Transacao {
@@ -92,7 +93,7 @@ public class Transacao {
 
     @Override
     public String toString() {
-        return "Transacao{" +
+        return "entities.Transacao{" +
                 "valor='" + valor + '\'' +
                 ", data='" + data + '\'' +
                 ", hora='" + hora + '\'' +

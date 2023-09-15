@@ -1,14 +1,10 @@
+import entities.Cartao;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
 public class SocketsServer {
-
-    private Cartao cartao;
-
-    public SocketsServer(Cartao cartao) {
-        this.cartao = cartao;
-    }
 
     public static void main(String[] args) throws IOException {
         ServerSocket server = new ServerSocket(8080, 1);

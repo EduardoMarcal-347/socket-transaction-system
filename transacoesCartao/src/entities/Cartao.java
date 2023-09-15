@@ -1,3 +1,5 @@
+package entities;
+
 import java.util.Objects;
 
 public class Cartao {
@@ -54,7 +56,7 @@ public class Cartao {
 
     @Override
     public String toString() {
-        return "Cartao{" +
+        return "entities.Cartao{" +
                 "numero='" + numero + '\'' +
                 ", nomeCliente='" + nomeCliente + '\'' +
                 ", saldo=" + saldo +
