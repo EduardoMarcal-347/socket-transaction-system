@@ -134,18 +134,4 @@ public class ProcessadorTransacao {
         }
         return formatedNsu;
     }
-
-    @Override
-    public String toString() {
-        return "ProcessadorTransacao{" +
-                "messageReq='" + messageReq + '\'' +
-                ", valor='" + valor + '\'' +
-                ", hora='" + hora + '\'' +
-                ", data='" + data + '\'' +
-                ", redeTransmissora='" + redeTransmissora + '\'' +
-                ", numeroCartao='" + numeroCartao + '\'' +
-                ", formaPagamento='" + formaPagamento + '\'' +
-                ", nsu=" + nsu +
-                '}';
-    }
 }

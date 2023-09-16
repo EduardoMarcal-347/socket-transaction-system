@@ -1,5 +1,8 @@
+import service.ComprovanteTransacao;
+
 import java.io.*;
 import java.net.Socket;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
 public class ClientSocket {
@@ -7,6 +10,8 @@ public class ClientSocket {
 
     public static void main(String[] args) throws IOException {
         Socket conexao = new Socket("127.0.0.1", 8080);
+        DataInputStream entrada = new DataInputStream(conexao.getInputStream());
+        DataOutputStream saida = new DataOutputStream(conexao.getOutputStream());
 
         byte[] m_msgBytes_0200 = {
                 '0', '2', '0', '0', //tipo da mensagem - 200 é uma mensagem de requisição de transação financeira
@@ -18,10 +23,12 @@ public class ClientSocket {
                 '1' // bit 62, forma de pagamento 1 - débito, 2 - crédito
         };
 
-        DataInputStream entrada = new DataInputStream(conexao.getInputStream());
-        DataOutputStream saida = new DataOutputStream(conexao.getOutputStream());
         saida.write(m_msgBytes_0200);
         saida.flush();
+        byte[] byteDados = new byte[46];
+        entrada.readFully(byteDados);
+        ComprovanteTransacao comprovante = new ComprovanteTransacao(new String(byteDados, StandardCharsets.UTF_8));
+        comprovante.imprimirComprovante();
 
         System.out.println("Conexao encerrada!");
         conexao.close();

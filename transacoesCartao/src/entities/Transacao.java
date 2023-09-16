@@ -90,12 +90,11 @@ public class Transacao {
         this.numeroCartao = numeroCartao;
     }
 
-    public String encryptToByte(){
+    public byte[] encryptToByte(){
         String message = "0210" + this.valor + this.hora + this.data + this.redeTransmissora
                 + this.codigoResposta + this.nsu;
-//        byte[] finalMessage = message.getBytes(StandardCharsets.UTF_8);
-//        return finalMessage;
-        return message;
+        byte[] finalMessage = message.getBytes(StandardCharsets.UTF_8);
+        return finalMessage;
     }
 
     @Override
