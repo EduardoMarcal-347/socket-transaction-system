@@ -1,5 +1,4 @@
-import entities.Cartao;
-import utils.ByteParser;
+import service.ProcessadorTransacao;
 
 import java.io.DataInputStream;
 import java.io.IOException;
@@ -12,6 +11,7 @@ public class SocketsServer {
     public static void main(String[] args) throws IOException {
         ServerSocket server = new ServerSocket(8080, 1);
         Thread.currentThread().setName("ThreadServidor");
+        ProcessadorTransacao processador = new ProcessadorTransacao();
 
 
         while (true) {
@@ -22,8 +22,7 @@ public class SocketsServer {
             byte[] byteDados = new byte[45];
             entrada.readFully(byteDados);
             String msg = new String(byteDados, StandardCharsets.UTF_8);
-            ByteParser parser = new ByteParser(msg);
-            System.out.println(parser.toString());
+            System.out.println(processador.processarTransacao(msg).encryptToByte());
         }
 
     }

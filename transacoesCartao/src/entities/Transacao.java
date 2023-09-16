@@ -1,5 +1,6 @@
 package entities;
 
+import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
 public class Transacao {
@@ -12,7 +13,18 @@ public class Transacao {
     private String nsu;
     private String codigoResposta;
 
-    private Cartao cartao;
+    private String numeroCartao;
+
+    public Transacao(String valor, String data, String hora, String redeTransmissora, String formaPagamento, String nsu, String codigoResposta, String numeroCartao) {
+        this.valor = valor;
+        this.data = data;
+        this.hora = hora;
+        this.redeTransmissora = redeTransmissora;
+        this.formaPagamento = formaPagamento;
+        this.nsu = nsu;
+        this.codigoResposta = codigoResposta;
+        this.numeroCartao = numeroCartao;
+    }
 
     public String getValor() {
         return valor;
@@ -70,12 +82,20 @@ public class Transacao {
         this.codigoResposta = codigoResposta;
     }
 
-    public Cartao getCartao() {
-        return cartao;
+    public String getNumeroCartao() {
+        return numeroCartao;
     }
 
-    public void setCartao(Cartao cartao) {
-        this.cartao = cartao;
+    public void setNumeroCartao(String numeroCartao) {
+        this.numeroCartao = numeroCartao;
+    }
+
+    public String encryptToByte(){
+        String message = "0210" + this.valor + this.hora + this.data + this.redeTransmissora
+                + this.codigoResposta + this.nsu;
+//        byte[] finalMessage = message.getBytes(StandardCharsets.UTF_8);
+//        return finalMessage;
+        return message;
     }
 
     @Override
@@ -83,12 +103,12 @@ public class Transacao {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Transacao transacao = (Transacao) o;
-        return Objects.equals(valor, transacao.valor) && Objects.equals(data, transacao.data) && Objects.equals(hora, transacao.hora) && Objects.equals(redeTransmissora, transacao.redeTransmissora) && Objects.equals(formaPagamento, transacao.formaPagamento) && Objects.equals(nsu, transacao.nsu) && Objects.equals(codigoResposta, transacao.codigoResposta) && Objects.equals(cartao, transacao.cartao);
+        return Objects.equals(valor, transacao.valor) && Objects.equals(data, transacao.data) && Objects.equals(hora, transacao.hora) && Objects.equals(redeTransmissora, transacao.redeTransmissora) && Objects.equals(formaPagamento, transacao.formaPagamento) && Objects.equals(nsu, transacao.nsu) && Objects.equals(codigoResposta, transacao.codigoResposta) && Objects.equals(numeroCartao, transacao.numeroCartao);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(valor, data, hora, redeTransmissora, formaPagamento, nsu, codigoResposta, cartao);
+        return Objects.hash(valor, data, hora, redeTransmissora, formaPagamento, nsu, codigoResposta, numeroCartao);
     }
 
     @Override
@@ -101,7 +121,7 @@ public class Transacao {
                 ", formaPagamento='" + formaPagamento + '\'' +
                 ", nsu='" + nsu + '\'' +
                 ", codigoResposta='" + codigoResposta + '\'' +
-                ", cartao=" + cartao +
+                ", cartao=" + numeroCartao +
                 '}';
     }
 }

@@ -6,12 +6,12 @@ public class Cartao {
 
     private String numero;
     private String nomeCliente;
-    private String saldo;
+    private Double saldo;
 
     public Cartao() {
     }
 
-    public Cartao(String numero, String nomeCliente, String saldo) {
+    public Cartao(String numero, String nomeCliente, Double saldo) {
         this.numero = numero;
         this.nomeCliente = nomeCliente;
         this.saldo = saldo;
@@ -33,11 +33,11 @@ public class Cartao {
         this.nomeCliente = nomeCliente;
     }
 
-    public String getSaldo() {
+    public Double getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(String saldo) {
+    public synchronized void setSaldo(Double saldo) {
         this.saldo = saldo;
     }
 
