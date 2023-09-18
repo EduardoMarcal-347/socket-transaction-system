@@ -30,14 +30,7 @@ public class ProcessadorTransacao {
         this.nsu = nsu;
     }
 
-    public void initializeCartoesMemoria() {
-        listaCartoes.put("401231021845", new Cartao("401231021845", "Eduardo Marçal", 1000.50));
-        listaCartoes.put("401231021846", new Cartao("401231021845", "Claudio Tornado", 275.75));
-        listaCartoes.put("401231021847", new Cartao("401231021845", "Julia Lua", 12450.00));
-    }
-
     public Transacao processarTransacao(String message) {
-        String messageReq = message.substring(0, 4);
         String valor = message.substring(4, 16);
         String hora = message.substring(16, 22);
         String data = message.substring(22, 26);

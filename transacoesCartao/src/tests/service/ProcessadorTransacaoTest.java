@@ -14,13 +14,13 @@ import java.util.HashMap;
 public class ProcessadorTransacaoTest {
 
     private static ProcessadorTransacao processador;
+    private static HashMap<String, Cartao> repositoryCartoes = new HashMap<>();
 
     @BeforeAll
     public static void initialize() {
-        HashMap<String, Cartao> repositoryCartoes = new HashMap<>();
         repositoryCartoes.put("401231021845", new Cartao("401231021845", "Eduardo Marçal", 1000.50));
-        repositoryCartoes.put("401231021846", new Cartao("401231021845", "Claudio Tornado", 275.75));
-        repositoryCartoes.put("401231021847", new Cartao("401231021845", "Julia Lua", 12450.00));
+        repositoryCartoes.put("401231021846", new Cartao("401231021846", "Claudio Tornado", 275.75));
+        repositoryCartoes.put("401231021847", new Cartao("401231021847", "Julia Lua", 12450.00));
         processador = new ProcessadorTransacao(repositoryCartoes);
         processador.setNsu(12121); // inicializando com um valor mais alto para verificar incremento da nsu e seu parse para String
     }
@@ -83,12 +83,17 @@ public class ProcessadorTransacaoTest {
         };
         String codigoEsperado = "00";
         String nsuEsperado = "000000012122"; //o ultimo nsu registrado foi 12121 pois foi inicializado com esse valor
+        //saldo atual 1000.50 - valor compra 20.10
+        Double saldoEsperado = 980.40;
+
 
         Transacao transacao = processador.processarTransacao(
                 new String(m_msgBytes_0200, StandardCharsets.UTF_8));
+        Cartao cliente = repositoryCartoes.get("401231021845");
 
         Assertions.assertEquals(codigoEsperado, transacao.getCodigoResposta());
         Assertions.assertEquals(nsuEsperado, transacao.getNsu());
+        Assertions.assertEquals(saldoEsperado, cliente.getSaldo());
     }
 
 
