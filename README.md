@@ -24,7 +24,7 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a> todo !!!-->
 
-  <h3 align="center">sockets-multithread</h3>
+  <h3 align="center">socket-transaction-system</h3>
 
   <p align="center">
     Socket-Based Transaction System
