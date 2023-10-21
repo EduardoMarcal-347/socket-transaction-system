@@ -185,7 +185,7 @@ These resources were immensely valuable during the development of this project, 
 [issues-shield]: https://img.shields.io/github/issues/EduardoMarcal-347/sockets-multithread.svg?style=for-the-badge
 [issues-url]: https://github.com/EduardoMarcal-347/sockets-multithread/issues
 [license-shield]: https://img.shields.io/github/license/EduardoMarcal-347/sockets-multithread.svg?style=for-the-badge
-[license-url]: https://github.com/EduardoMarcal-347/sockets-multithread/blob/master/LICENSE.txt
+[license-url]: https://github.com/EduardoMarcal-347/sockets-multithread/blob/main/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://br.linkedin.com/in/eduardo-marcal-de-souza-filho
 [java.io]: https://img.shields.io/badge/Java-f89820?style=for-the-badge&logo=java&logoColor=61DAFB
