@@ -142,8 +142,6 @@ Project Link: [https://github.com/EduardoMarcal-347/sockets-multithread.git)
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-I would like to express my gratitude to the following resources that were crucial in the development of this project:
-
 ### Java
 
 * [Oracle's Java Documentation](https://docs.oracle.com/en/java/) - The official Java language documentation provided by Oracle. Essential for understanding syntax, API, and best practices.
@@ -167,8 +165,6 @@ I would like to express my gratitude to the following resources that were crucia
 * [Java Concurrency in Practice](https://www.oreilly.com/library/view/java-concurrency-in/0321349601/) (Book) - Written by Brian Goetz and others, it is an essential reference for Java developers working with concurrent programming.
 
 * [Baeldung's Guide to Java Concurrency](https://www.baeldung.com/java-concurrency) - A series of comprehensive articles covering everything from basic thread concepts to advanced concurrency techniques.
-
-These resources were immensely valuable during the development of this project, providing knowledge and practical examples that were crucial to the implementation's success.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
